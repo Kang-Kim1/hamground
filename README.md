@@ -1,2 +1,3 @@
-# hamground
-Android(Kotlin) Application
+# Hamground 
+## Kotlin 기반 Android Application
+* 
