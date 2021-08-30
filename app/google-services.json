@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "531597401316",
+    "project_id": "hamground-d0070",
+    "storage_bucket": "hamground-0070.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:531597401316:android:69a4e16e2006cf02a0a0f1",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "531597401316-5t44idtmf4em4d9h6h4tshojrd0dsjq8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "0bd61b4183f15a0f667eced8092d1b8b41bb3581"
+          }
+        },
+        {
+          "client_id": "531597401316-6l5q8pficig8v0gi1ugi26tkipqqqu7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1QsqDbOXflJxS7WTzWA68wYTonyrh54Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "531597401316-6l5q8pficig8v0gi1ugi26tkipqqqu7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

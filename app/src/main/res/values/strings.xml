@@ -3,4 +3,7 @@
     <string name="text_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="button_write">Write</string>
+    <string name="register_pw2_et"><font size='25'>비밀번호</font>
+        <br/>
+        <font size="100" color="#ff0000">재입력</font></string>
 </resources>

@@ -5,12 +5,15 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.myapplication.board.BoardFragment
 import com.example.myapplication.list.ListFragment
+import com.example.myapplication.login.LoginDiaglogFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
     lateinit var listFragment : ListFragment
     lateinit var boardFragment : BoardFragment
+
+    lateinit var loginDialogFragment : LoginDiaglogFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         System.out.println("Fragment Committed")
 
-        val bottomNavView : BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        val bottomNavView : BottomNavigationView = findViewById(R.id.bottom_navView)
 
         bottomNavView.run{
             setOnNavigationItemSelectedListener {
@@ -39,6 +42,12 @@ class MainActivity : AppCompatActivity() {
                     R.id.board -> {
                         println("Board FRAG SELECTED")
                         selectFragment(boardFragment)
+                    }
+                    R.id.login -> {
+                        println("Board FRAG SELECTED")
+                        loginDialogFragment = LoginDiaglogFragment()
+                        loginDialogFragment.show(supportFragmentManager, "dialog_event")
+
                     }
                 }
                 true

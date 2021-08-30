@@ -11,4 +11,10 @@
         android:icon="@mipmap/ic_list_foreground"
         android:title="Board"
         />
+
+    <item
+        android:id="@+id/login"
+        android:icon="@mipmap/ic_list_foreground"
+        android:title="Board"
+        />
 </menu>

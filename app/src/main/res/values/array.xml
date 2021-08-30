@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_spnr">
+        <item>햄스터 정보</item>
+        <item>장터</item>
+        <item>잡담</item>
+        <item>상담</item>
+        <item>공유</item>
+    </string-array>
+
+    <string-array name="domain_spnr">
+        <item>gmail.com</item>
+        <item>naver.com</item>
+        <item>yahoo.co.kr</item>
+        <item>daum.net</item>
+        <item>hotmail.com</item>
+        <item>hotmail.com</item>
+    </string-array>
+    
+</resources>
