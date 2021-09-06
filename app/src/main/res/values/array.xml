@@ -9,12 +9,18 @@
     </string-array>
 
     <string-array name="domain_spnr">
+        <item>Gmail</item>
+        <item>Naver</item>
+        <item>Daum</item>
+        <item>Hotmail</item>
+        <item>직접입력</item>
+    </string-array>
+
+    <string-array name="domain_address">
         <item>gmail.com</item>
         <item>naver.com</item>
-        <item>yahoo.co.kr</item>
         <item>daum.net</item>
-        <item>hotmail.com</item>
-        <item>hotmail.com</item>
+        <item>Hotmail</item>
     </string-array>
     
 </resources>

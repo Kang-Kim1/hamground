@@ -1,5 +1,8 @@
 package retrofit
 
+import android.content.res.Resources
+import com.example.myapplication.MainActivity
+import com.example.myapplication.R
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -16,7 +19,7 @@ object RetrofitClient {
     val httpClient : OkHttpClient.Builder = OkHttpClient.Builder()
 
 
-    private const val BASE_URL : String = "http://172.30.1.9/"
+    private var BASE_URL : String = "http://192.168.0.13"
 
     fun getInstance() : Retrofit {
         intercepter.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -31,5 +34,13 @@ object RetrofitClient {
         }
 
         return instance!! // throws exception if value == null
+    }
+
+    fun setURL(ip : String) {
+        BASE_URL = "http://$ip"
+    }
+
+    fun getURL() : String {
+        return BASE_URL
     }
 }

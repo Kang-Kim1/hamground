@@ -4,21 +4,21 @@
     android:layout_width="match_parent"
     android:layout_marginTop="50dp"
     android:layout_marginBottom="50dp"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:orientation="vertical"
     android:weightSum="8"
     >
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="회원가입"
-        android:fontFamily="@font/bmjua"
-        android:textSize="40dp"
-        android:textStyle="bold"
         android:layout_weight="1"
         android:gravity="center"
-        ></TextView>
+        android:text="회원가입"
+        android:textColor="@color/theme_tiff"
+        android:textSize="40dp"
+        android:textStyle="bold"></TextView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -27,7 +27,6 @@
         android:weightSum="6">
         <TextView
             android:text="ID"
-            android:fontFamily="@font/bmjua"
             android:gravity="center"
             android:layout_width="0dp"
             android:textSize="25dp"
@@ -35,7 +34,6 @@
             android:layout_weight="2"></TextView>
         <EditText
             android:id="@+id/register_id_et"
-            android:fontFamily="@font/bmjua"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="4"></EditText>
@@ -48,8 +46,6 @@
         android:layout_weight="1"
         android:weightSum="6">
         <TextView
-            android:fontFamily="@font/bmjua"
-
             android:text="별칭"
             android:gravity="center"
             android:layout_width="0dp"
@@ -57,8 +53,6 @@
             android:layout_height="match_parent"
             android:layout_weight="2"></TextView>
         <EditText
-            android:fontFamily="@font/bmjua"
-
             android:id="@+id/register_nickname_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -81,7 +75,7 @@
         <EditText
             android:id="@+id/register_pw_et"
             android:layout_width="0dp"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:layout_height="match_parent"
             android:layout_weight="4"></EditText>
     </LinearLayout>
@@ -99,12 +93,14 @@
             android:layout_weight="2"
             android:gravity="center"
             android:textSize="25dp"
+
             android:text="@string/register_pw2_et"></TextView>
         <EditText
             android:id="@+id/register_pw2_et"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:inputType="textPassword"
+            android:password="true"
             android:layout_weight="4"></EditText>
     </LinearLayout>
 
@@ -165,5 +161,17 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+
+        android:text="회원가입">
+
+
+    </androidx.appcompat.widget.AppCompatButton>
 
 </LinearLayout>

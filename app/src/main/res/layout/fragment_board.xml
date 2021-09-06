@@ -24,7 +24,7 @@
             android:fontFamily="@font/bmjua"
             android:hint="Enter Here."
             android:inputType="textPersonName"
-            android:textColor="#FFFDFD"
+            android:textColor="@color/theme_tiff"
             android:textColorHint="#5A5858"
             app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintHorizontal_bias="0.5"

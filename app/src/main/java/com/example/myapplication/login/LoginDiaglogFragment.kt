@@ -1,15 +1,21 @@
 package com.example.myapplication.login
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.Point
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.DialogFragment
 import com.example.myapplication.R
-import com.example.myapplication.board.PostingActivity
+import com.example.myapplication.register.RegisterActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -18,14 +24,38 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import retrofit.RetrofitClient
+import retrofit2.Retrofit
 
 class LoginDiaglogFragment : DialogFragment() {
 
 //    lateinit var loginBtn : SignInButton
     lateinit var registerBtn : Button
 
+    lateinit var ipSetBtn : Button
+
+    lateinit var ipTV : TextView
+
+    lateinit var ipSetET : EditText
+
     lateinit var firebaseAuth : FirebaseAuth
     lateinit var googleClient : GoogleSignInClient
+
+
+    override fun onResume() {
+        super.onResume()
+
+        // Device Width 기준 0.9배로 설정
+        val windowManager = activity?.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        val display = windowManager.defaultDisplay
+        val size = Point()
+        display.getSize(size)
+
+        val params: ViewGroup.LayoutParams? = dialog?.window?.attributes
+        val deviceWidth = size.x
+        params?.width = (deviceWidth * 0.9).toInt()
+        dialog?.window?.attributes = params as WindowManager.LayoutParams
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,9 +64,21 @@ class LoginDiaglogFragment : DialogFragment() {
     ): View? {
         val v : View = inflater.inflate(R.layout.dialog_fragment_login, container)
 //        loginBtn = v.findViewById(R.id.google_signin_btn)
+        ipTV = v.findViewById(R.id.ip_tv)
+        ipTV.setText(RetrofitClient.getURL())
+
+        ipSetET = v.findViewById(R.id.ip_et)
+
         registerBtn = v.findViewById(R.id.register_btn)
         registerBtn.setOnClickListener {
-            signIn()
+            openRegister()
+        }
+
+        ipSetBtn = v.findViewById(R.id.ip_set_btn)
+        ipSetBtn.setOnClickListener{
+            val newIP : String = ipSetET.text.toString()
+            Log.d("NEW IP", newIP)
+            RetrofitClient.setURL(newIP)
         }
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -53,10 +95,10 @@ class LoginDiaglogFragment : DialogFragment() {
         return v
 
     }
-    private fun signIn() {
+    private fun openRegister() {
 //        val signInIntent = googleClient.signInIntent
 //        startActivityForResult(signInIntent, RC_SIGN_IN)
-        val registerIntent = Intent(context, PostingActivity::class.java)
+        val registerIntent = Intent(context, RegisterActivity::class.java)
 
         startActivity(registerIntent)
     }

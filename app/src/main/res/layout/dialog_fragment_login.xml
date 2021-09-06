@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/register_btn"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ip_tv"
+        android:layout_margin="10dp"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/common_google_signin_btn_text_light"
+        android:text="Current IP"
+        android:textColor="@color/black"
+        android:textColorHint="@color/theme_tiff" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/register_btn"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/theme_tiff"
         android:backgroundTint="@color/theme_tiff"
         android:text="Register"
-        android:textColor="@color/theme_tiff"
+        android:textColor="@color/black"
         android:textColorHint="@color/theme_tiff" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/ip_set_btn"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/common_google_signin_btn_text_light"
+        android:text="Set IP"
+        android:textColor="@color/black"
+        android:textColorHint="@color/theme_tiff" />
+
+    <EditText
+        android:id="@+id/ip_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter New IP"
+        ></EditText>
 </LinearLayout>
